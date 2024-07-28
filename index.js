@@ -4,21 +4,13 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.post('/interactions', (req, res) => {
+app.post('/api/interactions', (req, res) => {
     const interaction = req.body;
 
     if (interaction.type === 1) {
         res.send({ type: 1 });
     } else if (interaction.type === 2) {
-        const command = interaction.data.name;
-        if (command === 'hello') {
-            res.send({
-                type: 4,
-                data: {
-                    content: 'Hello, world!'
-                }
-            });
-        }
+        // Handle other interaction types
     }
 });
 
